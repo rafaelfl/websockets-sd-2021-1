@@ -26,7 +26,7 @@
     socket.onmessage = ({ data }) => {
         var texto = document.createElement("div");
 
-        texto.innerHTML(data.toString());
+        texto.textContent = data.toString();
 
         document.getElementById("listamsg").appendChild(texto);
     }
