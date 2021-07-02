@@ -8,7 +8,12 @@
 </head>
 <body>
     <h1>Bem vindo ao mundo dos WebSockets!</h1>
-    <div id="mensagem"></div>
+    <div>
+        <input type="text" id="mensagem">
+        <input type="button" id="enviar" onclick="sendMessage()" value="Ok">
+    </div>
+
+    <div id="listamsg"></div>
 </body>
 <script>
     const HOST = location.origin.replace(/^http/, 'ws')
@@ -19,7 +24,15 @@
     }
 
     socket.onmessage = ({ data }) => {
-        document.getElementById("mensagem").innerHTML = data.toString();
+        var texto = document.createElement("div");
+
+        texto.innerHTML(data.toString());
+
+        document.getElementById("listamsg").appendChild(texto);
+    }
+
+    function sendMessage() {
+        socket.send(document.getElementById("mensagem").value);
     }
 </script>
 </html>

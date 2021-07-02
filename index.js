@@ -13,5 +13,11 @@ const wss = new ws.Server({ server });
 wss.on("connection", (socket) => {
     console.log("Cliente conectado!");
 
-    socket.send("Olá mundo WebSocket!");
+    socket.on("message", ({ message }) => {
+      console.log(wss.clients.keys());
+
+      wss.clients.forEach( (clientSocket) => {
+        clientSocket.send(message);
+      });
+    });
 });
