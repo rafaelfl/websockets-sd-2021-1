@@ -10,5 +10,16 @@
     <h1>Bem vindo ao mundo dos WebSockets!</h1>
     <div id="mensagem"></div>
 </body>
-<script src="client.js"></script>
+<script>
+    const HOST = location.origin.replace(/^http/, 'ws')
+    const socket = new WebSocket(HOST);
+
+    socket.onopen = () => {
+        console.log("Conexão aberta!");
+    }
+
+    socket.onmessage = ({ data }) => {
+        document.getElementById("mensagem").innerHTML = data.toString();
+    }
+</script>
 </html>
