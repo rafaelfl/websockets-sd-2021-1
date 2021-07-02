@@ -1,0 +1,25 @@
+{
+  "name": "websockets-sd-2021-1",
+  "version": "1.0.0",
+  "description": "Aplicação WebSocket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelfl/websockets-sd-2021-1.git"
+  },
+  "author": "Rafael Fernandes Lopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelfl/websockets-sd-2021-1/issues"
+  },
+  "homepage": "https://github.com/rafaelfl/websockets-sd-2021-1#readme",
+  "dependencies": {
+    "bufferutil": "^4.0.3",
+    "express": "^4.17.1",
+    "utf-8-validate": "^5.0.5",
+    "ws": "^7.5.1"
+  }
+}
