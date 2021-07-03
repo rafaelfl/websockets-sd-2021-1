@@ -13,7 +13,7 @@ const wss = new ws.Server({ server });
 wss.on("connection", (socket) => {
     console.log("Cliente conectado!");
 
-    socket.on("message", ({ message }) => {
+    socket.on("message", (message) => {
       console.log(wss.clients.keys());
 
       wss.clients.forEach( (clientSocket) => {
